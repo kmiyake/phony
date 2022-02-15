@@ -141,7 +141,7 @@ module Phony
         cc = ''
         1.upto(3) do |i|
           cc << number.slice!(0..0)
-          country = countries[i][cc]
+          country = countries.dig(i, cc)
           return [country, cc, number] if country
         end
         # This line is never reached as CCs are in prefix code.
